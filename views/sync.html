@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- views/resp.html -->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h3>你想要load的服务器是:{{.ServerName}}</h3>
+<h3>load successful!</h3>
+<h4>serverID:{{.ServerId}}</h4>
+<h4>ip:{{.Ip}}</h4>
+<h4>serverName:{{.EndServerName}}</h4>
+<form action="/syncEtcd" method="post">
+    <input name="serverId" type="text" value= {{.ServerId}} disabled="true" > <br>
+    <br>
+    <input type="submit" value="同步">
+</form>
+<p><a href="/">返回</a></p>
+</body>
+</html>
